@@ -12,7 +12,7 @@ try:
     input = raw_input
 except NameError:
     # Python 3
-    StandardError = Exception
+    Exception = Exception
 
 apis = {
     API_MACOSX_CORE: "OS X CoreMIDI",
@@ -27,7 +27,7 @@ available_apis = get_compiled_api()
 for api, api_name in sorted(apis.items()):
     if api in available_apis:
         try:
-            reply = input("Probe ports using the %s API? (Y/n) " % api_name)
+            reply = eval(input("Probe ports using the %s API? (Y/n) " % api_name))
             if reply.strip().lower() not in ['', 'y', 'yes']:
                 continue
         except (KeyboardInterrupt, EOFError):
@@ -38,17 +38,17 @@ for api, api_name in sorted(apis.items()):
             try:
                 midi = class_(api)
                 ports = midi.get_ports()
-            except StandardError as exc:
-                print("Could not probe MIDI %s ports: %s" % (name, exc))
+            except Exception as exc:
+                print(("Could not probe MIDI %s ports: %s" % (name, exc)))
                 continue
 
             if not ports:
-                print("No MIDI %s ports found." % name)
+                print(("No MIDI %s ports found." % name))
             else:
-                print("Available MIDI %s ports:\n" % name)
+                print(("Available MIDI %s ports:\n" % name))
 
                 for port, name in enumerate(ports):
-                    print("[%i] %s" % (port, name))
+                    print(("[%i] %s" % (port, name)))
 
             print('')
             del midi

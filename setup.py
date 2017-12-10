@@ -134,11 +134,11 @@ elif sys.platform.startswith('win'):
         libraries += ["winmm"]
 
 else:
-    print("""\
+    print(("""\
 WARNING: This operating system (%s) is not supported by RtMidi.
 Linux, Mac OS X (>= 10.5), Windows (XP, Vista, 7/8/10) are supported.
 Continuing and hoping for the best...
-""" % sys.platform)
+""" % sys.platform))
 
 # define _rtmidi Extension
 extensions = [

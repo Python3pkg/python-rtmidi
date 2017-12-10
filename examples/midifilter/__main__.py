@@ -5,7 +5,7 @@
 #
 """Simple MIDI filter / processor."""
 
-from __future__ import absolute_import
+
 
 import argparse
 import logging
@@ -14,7 +14,7 @@ import threading
 import time
 
 try:
-    import Queue as queue
+    import queue as queue
 except ImportError:  # Python 3
     import queue
 

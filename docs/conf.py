@@ -58,7 +58,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = meta['name']
-copyright = u'2012 - 2016, %s' % meta['author']
+copyright = '2012 - 2016, %s' % meta['author']
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -211,7 +211,7 @@ latex_elements = {
 # [howto/manual]).
 latex_documents = [
     ('index', 'rtmidi.tex',
-     u'python-rtmidi Documentation',
+     'python-rtmidi Documentation',
      meta['author'], 'manual'),
 ]
 
@@ -242,7 +242,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'rtmidi',
-     u'python-rtmidi Documentation',
+     'python-rtmidi Documentation',
      [meta['author']], 1)
 ]
 
@@ -257,7 +257,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     ('index', 'rtmidi',
-     u'python-rtmidi Documentation',
+     'python-rtmidi Documentation',
      meta['author'],
      meta['name'],
      'One line description of project.',

@@ -4,7 +4,7 @@
 #
 """Show how to receive MIDI input by polling an input port."""
 
-from __future__ import print_function
+
 
 import logging
 import sys

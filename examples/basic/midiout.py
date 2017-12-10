@@ -4,7 +4,7 @@
 #
 """Show how to open an output port and send MIDI events."""
 
-from __future__ import print_function
+
 
 import logging
 import sys

@@ -78,7 +78,7 @@ class Command(object):
         if data is None or isinstance(data, int):
             self.data = data
         elif hasattr(data, 'split'):
-            self.data = map(int, data.split())
+            self.data = list(map(int, data.split()))
         else:
             raise TypeError("Could not parse 'data' field.")
 

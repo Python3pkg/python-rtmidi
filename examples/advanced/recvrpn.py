@@ -65,7 +65,7 @@ def main(args=None):
             rpn = decoder.last_changed
 
             if rpn:
-                print("RPN %i: %i" % (rpn, decoder.values[rpn]))
+                print(("RPN %i: %i" % (rpn, decoder.values[rpn])))
                 decoder.last_changed = None
 
             time.sleep(0.1)

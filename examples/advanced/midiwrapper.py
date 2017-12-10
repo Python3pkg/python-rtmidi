@@ -37,7 +37,7 @@ class MidiOutWrapper:
 if __name__ == '__main__':
     mout = rtmidi.MidiOut()
     mout.open_virtual_port()
-    input('Connect to new MIDI port and then press key...')
+    eval(input('Connect to new MIDI port and then press key...'))
     mw = MidiOutWrapper(mout, ch=3)
     mw.program_change(40)
     mw.note_on(60)

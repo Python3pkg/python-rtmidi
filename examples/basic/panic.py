@@ -4,7 +4,7 @@
 #
 """Send AllSoundOff and ResetAllControllers on all JACK MIDI outputs and all channels."""
 
-from __future__ import print_function
+
 
 import rtmidi
 from rtmidi.midiconstants import (ALL_SOUND_OFF, CONTROL_CHANGE,

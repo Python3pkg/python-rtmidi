@@ -56,7 +56,7 @@ def send_sysex_file(filename, midiout, portname, prompt=True, delay=50):
         if data.startswith(SYSTEM_EXCLUSIVE):
             try:
                 if prompt:
-                    yn = raw_input("Send '%s' to %s (y/N)? " % (bn, portname))
+                    yn = input("Send '%s' to %s (y/N)? " % (bn, portname))
             except (EOFError, KeyboardInterrupt):
                 print('')
                 raise StopIteration
@@ -127,7 +127,7 @@ def main(args=None):
         if ports:
             if args.list_ports:
                 for i, port in enumerate(ports):
-                    print("%i: %s" % (i, port))
+                    print(("%i: %s" % (i, port)))
 
                 return 0
 

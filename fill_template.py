@@ -9,9 +9,9 @@ from os.path import join
 from string import Template
 
 try:
-    basestring  # noqa
+    str  # noqa
 except:
-    basestring = str
+    str = str
 
 from distutils.core import Command
 from distutils.dist import DistributionMetadata
@@ -37,7 +37,7 @@ class FillTemplate(Command):
         self.template_ext = '.in'
 
     def finalize_options(self):
-        if isinstance(self.templates, basestring):
+        if isinstance(self.templates, str):
             self.templates = split_quoted(self.templates)
 
         self.templates += getattr(self.distribution.metadata, 'templates', None) or []

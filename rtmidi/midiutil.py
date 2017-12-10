@@ -9,7 +9,7 @@ API to use from the environment and to open MIDI ports.
 
 """
 
-from __future__ import print_function, unicode_literals
+
 
 import logging
 import os
@@ -19,7 +19,7 @@ try:
 except NameError:
     # Python 3
     raw_input = input
-    basestring = str
+    str = str
 
 import rtmidi
 
@@ -39,7 +39,7 @@ log = logging.getLogger(__name__)
 
 def _prompt_for_virtual(type_):
     """Prompt on the console whether a virtual MIDI port should be opened."""
-    return raw_input("Do you want to create a virtual MIDI %s port? (y/N) " %
+    return input("Do you want to create a virtual MIDI %s port? (y/N) " %
                      type_).strip().lower() in ['y', 'yes']
 
 
@@ -213,7 +213,7 @@ def open_midiport(port=None, type_="input", api=rtmidi.API_UNSPECIFIED,
     try:
         port = int(port)
     except (TypeError, ValueError):
-        if isinstance(port, basestring):
+        if isinstance(port, str):
             portspec = port
             for portno, name in enumerate(ports):
                 if portspec in name:
@@ -227,7 +227,7 @@ def open_midiport(port=None, type_="input", api=rtmidi.API_UNSPECIFIED,
         list_available_ports(ports)
 
         try:
-            r = raw_input("Select MIDI %s port (Control-C to exit): " % type_)
+            r = input("Select MIDI %s port (Control-C to exit): " % type_)
             port = int(r)
         except (KeyboardInterrupt, EOFError):
             del midiobj
